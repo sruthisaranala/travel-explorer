@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addFavorite } from "../features/favoriteSlice";
 
 function DestinationCard({ destination,onDelete }) {
+  let dispatch=useDispatch()
  return (
   <div>
    <div className="card">
@@ -16,7 +19,6 @@ function DestinationCard({ destination,onDelete }) {
      <p>{destination.category}</p>
 
      <p>⭐ {destination.rating}</p>
-     </div>
 
 <div className="card-actions">
  <Link
@@ -39,6 +41,10 @@ function DestinationCard({ destination,onDelete }) {
  >
    Delete
  </button>
+ <button className="favorite-btn" onClick={()=>dispatch(addFavorite(destination))}>
+ Favorite
+ </button>
+</div>
 </div>
 </div>
  );

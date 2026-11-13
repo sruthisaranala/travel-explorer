@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import ProtectedRoute from "./ProtectedRoutes";
+import Favorites from "../pages/Favorites";
 
 
 function AppRoutes() {
@@ -55,9 +56,9 @@ element={<Login/>}
     </ProtectedRoute>
   }
 />
-
-
-   </Routes>
+<Route path='/favs'element={<Favorites/>}
+/>
+</Routes>
    
  );
 }
